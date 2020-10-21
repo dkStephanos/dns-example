@@ -1,0 +1,12 @@
+/Users/stephanos/Projects/DNSLookup/DNSLookup/bin/Release/netcoreapp3.1/DNSLookup.deps.json
+/Users/stephanos/Projects/DNSLookup/DNSLookup/bin/Release/netcoreapp3.1/DNSLookup.runtimeconfig.json
+/Users/stephanos/Projects/DNSLookup/DNSLookup/bin/Release/netcoreapp3.1/DNSLookup.runtimeconfig.dev.json
+/Users/stephanos/Projects/DNSLookup/DNSLookup/bin/Release/netcoreapp3.1/DNSLookup.dll
+/Users/stephanos/Projects/DNSLookup/DNSLookup/bin/Release/netcoreapp3.1/DNSLookup.pdb
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.AssemblyInfoInputs.cache
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.AssemblyInfo.cs
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.csproj.CoreCompileInputs.cache
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.dll
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.pdb
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.genruntimeconfig.cache
+/Users/stephanos/Projects/DNSLookup/DNSLookup/obj/Release/netcoreapp3.1/DNSLookup.csprojAssemblyReference.cache

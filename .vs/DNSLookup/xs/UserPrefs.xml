@@ -1,0 +1,37 @@
+﻿<Properties StartupConfiguration="{2A89E459-78BF-4A3D-8A56-3795AD0768F9}|Default">
+  <MonoDevelop.Ide.ItemProperties.Client PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="DNSLookup2/Program.cs">
+    <Files>
+      <File FileName="DNSLookup/Program.cs" Line="66" Column="50" />
+      <File FileName="DNSLookup/Program (copy).cs" Line="36" Column="68" />
+      <File FileName="DNSLookup2/Program.cs" Line="10" Column="38" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="DNSLookup" expanded="True" selected="True">
+            <Node name="Client" expanded="True" />
+            <Node name="DNSLookup" expanded="True" />
+            <Node name="DNSLookup2" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.DNSLookup PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.ItemProperties.DNSLookup2 FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Multiple Projects" Name="Multiple Projects">
+      <Items>
+        <StartupItem ItemId="{9338593D-498B-4710-940C-8522C7C258B2}" ItemName="Client" ConfigurationId="Default" />
+        <StartupItem ItemId="{9B6D17EE-42EC-496E-9C75-D5469CFC9713}" ItemName="DNSLookup" ConfigurationId="Default" />
+        <StartupItem ItemId="{2A89E459-78BF-4A3D-8A56-3795AD0768F9}" ItemName="DNSLookup2" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+</Properties>
