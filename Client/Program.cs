@@ -23,6 +23,8 @@ public class SynchronousSocketClient
             // Create a TCP/IP  socket.  
             Socket sender = new Socket(ipAddress.AddressFamily,
                 SocketType.Stream, ProtocolType.Tcp);
+            Socket sender2 = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
+            Socket sender3 = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
 
             // Connect the socket to the remote endpoint. Catch any errors.  
             try
@@ -53,7 +55,6 @@ public class SynchronousSocketClient
 
                     // Open up connection to the new server
                     Console.WriteLine("Forwarding response to next server");
-                    Socket sender2 = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                     sender2.Connect(new IPEndPoint(ipAddress, Int32.Parse(returnMsg.Split(',')[1])));
                     Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
 
@@ -67,10 +68,41 @@ public class SynchronousSocketClient
                 returnMsg = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                 Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
+            // If we get a return message directing us to another server, forward request there
+            if (returnMsg.Contains("server2"))
+            {
+               // Shutdown the first connection
+               sender2.Shutdown(SocketShutdown.Both);
+               sender2.Disconnect(true);
+               sender2.Close();
 
+               // Open up connection to the new server
+               Console.WriteLine("Forwarding response to next server");
+               sender3.Connect(new IPEndPoint(ipAddress, Int32.Parse(returnMsg.Split(',')[1])));
+               Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
 
-
+               // Encode and send the request
+               msg = Encoding.ASCII.GetBytes("address?<EOF>");
+               sender3.Send(msg);
             }
+
+            // Receive the response from the remote device.  
+            bytesRec = sender.Receive(bytes);
+            returnMsg = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+            Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
+
+            if (returnMsg.Contains("address"))
+            {
+               // Shutdown the first connection
+               sender3.Shutdown(SocketShutdown.Both);
+               sender3.Disconnect(true);
+               sender3.Close();
+
+               // Open up connection to the new server
+               Console.WriteLine(returnMsg);
+            }
+
+         }
             catch (ArgumentNullException ane)
             {
                 Console.WriteLine("ArgumentNullException : {0}", ane.ToString());
