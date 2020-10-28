@@ -44,26 +44,31 @@ public class SynchronousSocketClient
                 Console.WriteLine("Echoed test = {0}",
                     Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
+                // If we get a return message directing us to another server, forward request there
                 if(returnMsg.Contains("server1")) {
+                    // Shutdown the first connection
+                    sender.Shutdown(SocketShutdown.Both);
+                    sender.Disconnect(true);
+                    sender.Close();
+
+                    // Open up connection to the new server
                     Console.WriteLine("Forwarding response to next server");
-                    Socket sender2 = new Socket(ipAddress.AddressFamily,
-                    SocketType.Stream, ProtocolType.Tcp);
-
+                    Socket sender2 = new Socket(ipAddress.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
                     sender2.Connect(new IPEndPoint(ipAddress, Int32.Parse(returnMsg.Split(',')[1])));
+                    Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
 
-                    Console.WriteLine("Socket connected to {0}",
-                    sender.RemoteEndPoint.ToString());
-
+                    // Encode and send the request
                     msg = Encoding.ASCII.GetBytes(returnMsg.Split(',')[0].Substring(returnMsg.Split(',')[0].Length - 8) + "<EOF>");
-
                     sender2.Send(msg);
                 }
 
+                // Receive the response from the remote device.  
+                bytesRec = sender.Receive(bytes);
+                returnMsg = Encoding.ASCII.GetString(bytes, 0, bytesRec);
+                Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
 
-                // Release the socket.  
-                sender.Shutdown(SocketShutdown.Both);
-                sender.Close();
+
 
             }
             catch (ArgumentNullException ane)
