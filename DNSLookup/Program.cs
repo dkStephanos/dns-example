@@ -97,12 +97,43 @@ public class SynchronousSocketListener
                         }
                         break;
                     case "fred":
+                        if(data.Contains("address"))
+                        {
+                           returnMessage = "address:100";
+                        } else
+                        {
+                           returnMessage = "Bad Request";
+                        }
                         break;
                     case "wilma":
+                        if (data.Contains("address"))
+                        {
+                           returnMessage = "address:100";
+                        }
+                        else
+                        {
+                           returnMessage = "Bad Request";
+                        }
                         break;
                     case "sensei":
+                        if (data.Contains("address"))
+                        {
+                           returnMessage = "address:100";
+                        }
+                        else
+                        {
+                           returnMessage = "Bad Request";
+                        }
                         break;
                     case "senpai":
+                        if (data.Contains("address"))
+                        {
+                           returnMessage = "address:100";
+                        }
+                        else
+                        {
+                           returnMessage = "Bad Request";
+                        }
                         break;
                     default:
                         returnMessage = "Bad Request";
