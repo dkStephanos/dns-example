@@ -57,18 +57,55 @@ public class SynchronousSocketListener
                 Console.WriteLine("Text received : {0}", data);
 
                 // If we are root, respond
-                if (name == "root")
-                {
-                    returnMessage = "server1:" + data.Substring(0, data.Length - 9);
+                switch (name) {
 
-                    if (data.Contains(".com"))
-                    {
-                        returnMessage += ",5001";
-                    }
-                    else if (data.Contains(".edu"))
-                    {
-                        returnMessage += ",5002";
-                    }
+                    case "root":
+                        returnMessage = "server1:" + data.Substring(0, data.Length - 9);
+
+                        if (data.Contains(".com"))
+                        {
+                            returnMessage += ",5001";
+                        }
+                        else if (data.Contains(".edu"))
+                        {
+                            returnMessage += ",5002";
+                        }
+                        break;
+                    case "com":
+                        returnMessage = "server2:" + data.Substring(0, data.Length - 9);
+
+                        if (data.Contains("fred"))
+                        {
+                            returnMessage += ",5003";
+                        }
+                        else if (data.Contains("wilma"))
+                        {
+                            returnMessage += ",5004";
+                        }
+                        break;
+                    case "edu":
+                        returnMessage = "server2:" + data.Substring(0, data.Length - 9);
+
+                        if (data.Contains("sensei"))
+                        {
+                            returnMessage += ",5005";
+                        }
+                        else if (data.Contains("senpai"))
+                        {
+                            returnMessage += ",5006";
+                        }
+                        break;
+                    case "fred":
+                        break;
+                    case "wilma":
+                        break;
+                    case "sensei":
+                        break;
+                    case "senpai":
+                        break;
+                    default:
+                        returnMessage = "Bad Request";
+                        break;
                 }
 
                 // Echo the data back to the client.  
