@@ -108,7 +108,7 @@ public class SynchronousSocketListener
                     case "wilma":
                         if (data.Contains("address"))
                         {
-                           returnMessage = "address:100";
+                           returnMessage = "address:150";
                         }
                         else
                         {
@@ -118,7 +118,7 @@ public class SynchronousSocketListener
                     case "sensei":
                         if (data.Contains("address"))
                         {
-                           returnMessage = "address:100";
+                           returnMessage = "address:200";
                         }
                         else
                         {
@@ -128,7 +128,7 @@ public class SynchronousSocketListener
                     case "senpai":
                         if (data.Contains("address"))
                         {
-                           returnMessage = "address:100";
+                           returnMessage = "address:250";
                         }
                         else
                         {

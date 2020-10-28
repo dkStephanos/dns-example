@@ -56,7 +56,7 @@ public class SynchronousSocketClient
                     // Open up connection to the new server
                     Console.WriteLine("Forwarding response to next server");
                     sender2.Connect(new IPEndPoint(ipAddress, Int32.Parse(returnMsg.Split(',')[1])));
-                    Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
+                    Console.WriteLine("Socket connected to {0}", sender2.RemoteEndPoint.ToString());
 
                     // Encode and send the request
                     msg = Encoding.ASCII.GetBytes(returnMsg.Split(',')[0].Substring(returnMsg.Split(',')[0].Length - 8) + "<EOF>");
@@ -64,7 +64,7 @@ public class SynchronousSocketClient
                 }
 
                 // Receive the response from the remote device.  
-                bytesRec = sender.Receive(bytes);
+                bytesRec = sender2.Receive(bytes);
                 returnMsg = Encoding.ASCII.GetString(bytes, 0, bytesRec);
                 Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
 
@@ -79,7 +79,7 @@ public class SynchronousSocketClient
                // Open up connection to the new server
                Console.WriteLine("Forwarding response to next server");
                sender3.Connect(new IPEndPoint(ipAddress, Int32.Parse(returnMsg.Split(',')[1])));
-               Console.WriteLine("Socket connected to {0}", sender.RemoteEndPoint.ToString());
+               Console.WriteLine("Socket connected to {0}", sender3.RemoteEndPoint.ToString());
 
                // Encode and send the request
                msg = Encoding.ASCII.GetBytes("address?<EOF>");
@@ -87,7 +87,7 @@ public class SynchronousSocketClient
             }
 
             // Receive the response from the remote device.  
-            bytesRec = sender.Receive(bytes);
+            bytesRec = sender3.Receive(bytes);
             returnMsg = Encoding.ASCII.GetString(bytes, 0, bytesRec);
             Console.WriteLine("Echoed test = {0}", Encoding.ASCII.GetString(bytes, 0, bytesRec));
 

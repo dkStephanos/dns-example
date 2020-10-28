@@ -1,0 +1,12 @@
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.exe
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.deps.json
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.runtimeconfig.json
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.runtimeconfig.dev.json
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.dll
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\bin\Debug\netcoreapp3.1\DNSLookup.pdb
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.csprojAssemblyReference.cache
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.AssemblyInfoInputs.cache
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.AssemblyInfo.cs
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.dll
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.pdb
+Z:\Fall 2020\Distributed\dns-example\DNSLookup\obj\Debug\netcoreapp3.1\DNSLookup.genruntimeconfig.cache
